@@ -18,11 +18,12 @@ const useStyles = makeStyles((theme) => ({
   cardImage: {
     height: 85,
     width: 85,
-    cursor: "pointer"
-  }
+    cursor: "pointer",
+  },
 }));
 
-export default function Map({ places, coords, setBounds, setCoords, setChildClicked }) {
+// Map component which uses google map api.
+function Map({ places, coords, setBounds, setCoords, setChildClicked }) {
   const classes = useStyles();
   return (
     <Box className={classes.mapContainer}>
@@ -48,12 +49,12 @@ export default function Map({ places, coords, setBounds, setCoords, setChildClic
                 <img
                   className={classes.cardImage}
                   src={
-                    (place.photo
+                    place.photo
                       ? place.photo.images.large.url
-                      : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg")
+                      : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
                   }
                 />
-                <Rating readOnly size={"small"} value={Number(place.rating)}/>
+                <Rating readOnly size={"small"} value={Number(place.rating)} />
               </Paper>
             </div>
           ))}
@@ -61,3 +62,5 @@ export default function Map({ places, coords, setBounds, setCoords, setChildClic
     </Box>
   );
 }
+
+export default Map;
