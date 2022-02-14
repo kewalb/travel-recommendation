@@ -5,7 +5,7 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import Rating from "@material-ui/lab/Rating";
 const useStyles = makeStyles((theme) => ({
   mapContainer: {
-    height: "85vh",
+    height: "95vh",
     width: "100%",
   },
   paper: {
@@ -28,7 +28,7 @@ function Map({ places, coords, setBounds, setCoords, setChildClicked }) {
   return (
     <Box className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.MAP_API_KEY }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_API_KEY }}
         defaultCenter={coords}
         center={coords}
         defaultZoom={14}

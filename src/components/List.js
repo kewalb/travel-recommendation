@@ -8,7 +8,7 @@ import {
   CircularProgress,
   Grid,
 } from "@material-ui/core";
-import PlaceDetails from "./PlaceDetails";
+import Detail from "./Detail";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -73,7 +73,7 @@ function List({
               places.map((place, index) => {
                 return (
                   <Grid ref={elRefs[index]} key={index} item xs={12}>
-                    <PlaceDetails
+                    <Detail
                       selected={Number(childClicked) === index}
                       placeRef={elRefs[index]}
                       place={place}

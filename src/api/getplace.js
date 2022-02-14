@@ -3,7 +3,7 @@ import axios from "axios";
 export const getPlacesData = async (type, sw, ne) => {
   try {
     const response = await axios.get(
-      "https://travel-advisor.p.rapidapi.com/" + type + "/list-in-boundary",
+      "https://travel-advisor.p.rapidapi.com/" +type+ "/list-in-boundary",
       {
         params: {
           bl_latitude: sw.lat,
@@ -13,11 +13,11 @@ export const getPlacesData = async (type, sw, ne) => {
         },
         headers: {
           "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-          "x-rapidapi-key": process.env.TRAVEL_KEY,
+          'x-rapidapi-key': process.env.REACT_APP_TRAVEL_KEY
         },
       }
     );
-
+    console.log(response.data);
     return response.data.data;
   } catch (error) {
     console.log(error);
